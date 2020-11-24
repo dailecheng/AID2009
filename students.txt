@@ -1,0 +1,22 @@
+create table grade(
+id int primary key auto_increment,
+name varchar(32) not null,
+语文 float default 0.0,
+数学 float default 0.0,
+英语 float default 0.0,
+地理 float default 0.0);
+
+insert into grade values
+(1,'张三',44,44,44,60),
+(2,'李四',80,0,66,70),
+(3,'王五',33,90,80,20),
+(4,'赵六',25,26,40,35);
+
+
+delimiter $$　
+create procedure choose(inout @a)
+begin
+select '语文' from grade where id=1 into 语文;
+set @a=@a+q1 if 语文<50;
+end  $$
+delimiter ;
