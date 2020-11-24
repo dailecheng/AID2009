@@ -1,0 +1,4 @@
+test.py
+*.a
+my_dir/
+.idea/
